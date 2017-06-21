@@ -1,7 +1,13 @@
-<p>
-  <strong>Title:</strong>
+<h3>
+  <strong>Category:</strong>
   <%= @category.title %>
-</p>
+</h3>
+
+<h4>Create a <%= link_to 'new Post', new_category_post_path(@category) %></h4>
+
+<% @posts.each do |post| %>
+  <p><%= post.username %> posted <%= post.title %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_category_path %> | 
 <%= link_to 'Back', categories_path %>
